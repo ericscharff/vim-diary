@@ -41,3 +41,5 @@ function diary#Diary()
   endif
   startinsert!
 endfunction
+
+command! Diary call diary#Diary()
