@@ -4,6 +4,9 @@ endif
 let g:loaded_diary = 1
 " Set to 1 to insert a timestamp upon insert
 let g:insert_diary_time = 0
+" Set to 1 for d-m-y format, e.g. 13-Apr-2025, 0 for the default 2025-Apr-13
+let g:diary_dmy_format = 0
+
 
 " Create a new diary entry. This assumes files with entries like
 "
@@ -21,8 +24,15 @@ let g:insert_diary_time = 0
 " added. In either case, the cursor is left in insert mode in an appropriate
 " location.
 function diary#Diary()
-  let l:t = strftime("%Y-%b-%d")
-  let l:pattern = '^\d\d\d\d-\w\w\w-\d\d\?$'
+  if g:diary_dmy_format
+    let l:t = strftime("%d-%b-%Y")
+    " Drop leading zero for first 10 days of moonth
+    let l:t = substitute(l:t, "^0", "", "")
+    let l:pattern = '^\d\d\?-\w\w\w-\d\d\d\d$'
+  else
+    let l:t = strftime("%Y-%b-%d")
+    let l:pattern = '^\d\d\d\d-\w\w\w-\d\d\?$'
+  endif
   let l:time = ''
   if g:insert_diary_time
     let l:time = strftime("%H:%M") . " - "
