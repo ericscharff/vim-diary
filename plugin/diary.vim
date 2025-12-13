@@ -22,6 +22,7 @@ let g:insert_diary_time = 0
 " location.
 function diary#Diary()
   let l:t = strftime("%Y-%b-%d")
+  let l:pattern = '^\d\d\d\d-\w\w\w-\d\d\?$'
   let l:time = ''
   if g:insert_diary_time
     let l:time = strftime("%H:%M") . " - "
@@ -30,8 +31,8 @@ function diary#Diary()
   execute "normal! gg"
   if search(l:t)
     " The current entry exists so start adding to it
-    " Jump past entry (first line starting with "2")
-    call search('^\d\d\d\d')
+    " Jump past entry (first line starting with just a date)
+    call search(l:pattern)
     " Then insert above. This should put the user right
     " above the previous entry
     execute "normal! kO" . l:time
