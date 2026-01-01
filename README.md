@@ -1,3 +1,5 @@
+# Happy 2026
+
 This directory contains a diary generation shell script (diary) intended to be
 placed in `$PATH` somewhere. Edit the `DIARY_FILE` variable to point to the
 location of the diary file.
