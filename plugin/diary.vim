@@ -4,18 +4,18 @@ endif
 let g:loaded_diary = 1
 " Set to 1 to insert a timestamp upon insert
 let g:insert_diary_time = 0
-" Set to 1 for d-m-y format, e.g. 13-Apr-2025, 0 for the default 2025-Apr-13
+" Set to 1 for d-m-y format, e.g. 13-Apr-2026, 0 for the default 2026-Apr-13
 let g:diary_dmy_format = 0
 
 
 " Create a new diary entry. This assumes files with entries like
 "
-" 2025-Apr-13
+" 2026-Apr-13
 "
 " First thing of the day
 " Second thing of the day
 "
-" 2025-Apr-12
+" 2026-Apr-12
 "
 " The older entry
 "

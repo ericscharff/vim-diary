@@ -1,5 +1,3 @@
-# Happy 2026
-
 This directory contains a diary generation shell script (diary) intended to be
 placed in `$PATH` somewhere. Edit the `DIARY_FILE` variable to point to the
 location of the diary file.
@@ -9,13 +7,13 @@ the `diary` command will edit `DIARY_FILE`, maintaining a list of dates with
 the most recent date at the top of the file, with entries like
 
 ```
-  2025-Apr-13
+  2026-Apr-13
 
   Entry one for the 13th
   Entry two for the 13th
   Entry three for the 13th
 
-  2025-Apr-12
+  2026-Apr-12
 
   Entry one for the 12th
   Entry two for the 12th
