@@ -2,9 +2,24 @@ This directory contains a diary generation shell script (diary) intended to be
 placed in `$PATH` somewhere. Edit the `DIARY_FILE` variable to point to the
 location of the diary file.
 
+# Installation
+
+This should be usable with most vim plugin managers. I use
+[vim-plug](https://junegunn.github.io/vim-plug/) but others should potentially
+work too. This can be installed with something like
+
+```
+call plug#begin()
+[ ... ]
+Plug 'ericscharff/vim-diary'
+call plug#end()
+```
+
+# Usage
+
 It is assumed that `DIARY_FILE` exists inside a git managed directory. Running
-the `diary` command will edit `DIARY_FILE`, maintaining a list of dates with
-the most recent date at the top of the file, with entries like
+the `diary` command will edit `DIARY_FILE`, maintaining a list of dates with the
+most recent date at the top of the file, with entries like
 
 ```
   2026-Apr-13
@@ -19,8 +34,8 @@ the most recent date at the top of the file, with entries like
   Entry two for the 12th
 ```
 
-The cursor is placed in insert mode in the correct place. (This relies on
-the `Diary()` function being in `.vimrc` or otherwise included by vim.)
+The cursor is placed in insert mode in the correct place. (This relies on the
+`Diary()` function being in `.vimrc` or otherwise included by vim.)
 
-If the file changes and the changes are saved, the change is staged into
-git, and runs `git commit -a`.
+If the file changes and the changes are saved, the change is staged into git,
+and runs `git commit -a`.
