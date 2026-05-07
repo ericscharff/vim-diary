@@ -5,7 +5,7 @@ location of the diary file.
 # Installation
 
 This should be usable with most vim plugin managers. I use
-[vim-plug](https://junegunn.github.io/vim-plug/) but others should potentially
+[vim-plug](https://junegunn.github.io/vim-plug/) but others should probably
 work too. This can be installed with something like
 
 ```
