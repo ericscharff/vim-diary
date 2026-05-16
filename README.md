@@ -15,6 +15,15 @@ Plug 'ericscharff/vim-diary'
 call plug#end()
 ```
 
+Or, for lazy.vim, it can be configured with
+
+```
+{
+  "ericscharff/vim-diary",
+  cmd = "Diary"
+}
+```
+
 # Usage
 
 It is assumed that `DIARY_FILE` exists inside a git managed directory. Running
