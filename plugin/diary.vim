@@ -26,7 +26,7 @@ let g:diary_dmy_format = 0
 function diary#Diary()
   if g:diary_dmy_format
     let l:t = strftime("%d-%b-%Y")
-    " Drop leading zero for first 10 days of moonth
+    " Drop leading zero for first 10 days of month
     let l:t = substitute(l:t, "^0", "", "")
     let l:pattern = '^\d\d\?-\w\w\w-\d\d\d\d$'
   else
