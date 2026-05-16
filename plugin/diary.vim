@@ -7,7 +7,6 @@ let g:insert_diary_time = 0
 " Set to 1 for d-m-y format, e.g. 13-Apr-2026, 0 for the default 2026-Apr-13
 let g:diary_dmy_format = 0
 
-
 " Create a new diary entry. This assumes files with entries like
 "
 " 2026-Apr-13
@@ -39,13 +38,17 @@ function diary#Diary()
   endif
   " Jump to top of file
   normal! gg
-  if search(l:t)
+  if search(l:t, 'cW')
     " The current entry exists so start adding to it
     " Jump past entry (first line starting with just a date)
-    call search(l:pattern)
-    " Then insert above. This should put the user right
-    " above the previous entry
-    execute "normal! kO" . l:time
+    if search(l:pattern, 'W')
+      " Found older entry, insert above it
+      execute "normal! kO" . l:time
+    else
+      " No older entry exists (this is the only entry). Jump to EOF.
+      normal! G
+      execute "normal! o" . l:time
+    endif
   else
     " No entry exists for that day, start a new one
     execute "normal! i" . l:t . "\<cr>\<cr>" . l:time . "\<cr>\<cr>\<esc>kk"
