@@ -38,7 +38,7 @@ function diary#Diary()
     let l:time = strftime("%H:%M") . " - "
   endif
   " Jump to top of file
-  execute "normal! gg"
+  normal! gg
   if search(l:t)
     " The current entry exists so start adding to it
     " Jump past entry (first line starting with just a date)
