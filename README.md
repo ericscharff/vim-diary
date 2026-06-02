@@ -15,6 +15,13 @@ Plug 'ericscharff/vim-diary'
 call plug#end()
 ```
 
+With nvim builtin vim-pack, this can be
+```
+vim.pack.add({
+  'https://github.com/ericscharff/vim-diary',
+})
+```
+
 Or, for lazy.vim, it can be configured with
 
 ```
