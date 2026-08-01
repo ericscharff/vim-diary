@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 DEFAULT_DIARY_FILE=$HOME/Documents/system-diary.txt
 DIARY_FILE=${DIARY_FILE:-$DEFAULT_DIARY_FILE}
 TARGET_FILE=${1:-$DIARY_FILE}
